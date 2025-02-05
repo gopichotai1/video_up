@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Details</title>
+</head>
+<body>
+    <h2>{{ video['name'] }}</h2>
+    <p>Category: {{ video['category'] }}</p>
+    <p>Uploaded on: {{ video['upload_time'] }}</p>
+    <video width="640" controls>
+        <source src="{{ url_for('static', filename='uploads/' + video['file_path'].split('/')[-1]) }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <a href="{{ url_for('view_videos') }}">Back to All Videos</a>
+</body>
+</html>
